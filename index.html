@@ -284,15 +284,14 @@
         }
 
         function showSummary(dateType) {
+            const selectedPlace = document.querySelector('input[name="place"]:checked');
+            const otherPlace = document.querySelector('.radio-group .input-field').value;
+            const place = selectedPlace ? selectedPlace.value : otherPlace;
+
             proposalBox.style.display = 'none'; // Hide the proposal box
             summaryBox.style.display = 'block'; // Show the summary box
 
             summaryText.textContent = `Congrats Divya! Your ${dateType} date has been fixed with Digvijay Maurya at ${place}`;
-            const selectedPlace = document.querySelector('input[name="place"]:checked');
-            const otherPlace = document.querySelector('.radio-group .input-field').value;
-            const place = selectedPlace ? selectedPlace.value : otherPlace;
-            summaryText.textContent += place === 'Other place' ? otherPlace : place;
-alert('Congrats Divya! Your' +dateType 'date has been fixed with Digvijay Maurya at'+place +other place); 
         }
     </script>
 </body>
