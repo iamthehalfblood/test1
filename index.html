@@ -283,7 +283,7 @@
             return radioGroup;
         }
 
-        function showSummary(dateType) {
+       function showSummary(dateType) {
             const selectedPlace = document.querySelector('input[name="place"]:checked');
             const otherPlace = document.querySelector('.radio-group .input-field').value;
             const place = selectedPlace ? selectedPlace.value : otherPlace;
@@ -291,7 +291,13 @@
             proposalBox.style.display = 'none'; // Hide the proposal box
             summaryBox.style.display = 'block'; // Show the summary box
 
-            summaryText.textContent = `Congrats Divya! Your ${dateType} date has been fixed with Digvijay Maurya at ${place}`;
+            // Construct the summary text including the selected answers
+            let summary = `Congrats Divya! Your ${dateType} date has been fixed with Digvijay Maurya at ${place}.`;
+
+            // Append more details or customize as needed
+            summary += ` Your answer for the last question was: ${place}`;
+
+            summaryText.textContent = summary;
         }
     </script>
 </body>
